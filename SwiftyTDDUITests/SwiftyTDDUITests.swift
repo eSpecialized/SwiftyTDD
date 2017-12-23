@@ -18,7 +18,7 @@ class SwiftyTDDUITests: XCTestCase {
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
         // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
+        app.launch()
 
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
@@ -30,7 +30,10 @@ class SwiftyTDDUITests: XCTestCase {
     
     func testDriveDesign() {
         //first test is title, in TDD we write the test first then change things to match till the test passes.
-        XCTAssert(app.navigationBars.staticTexts["SwiftyTDD"].exists, "App Title does not match intended App Name")
+        print(app.debugDescription)
+        let navBar = app.navigationBars.element.identifier
+        XCTAssert(navBar == "SwiftyTDD", "App Title does not match intended App Name")
+        
     }
     
 }
