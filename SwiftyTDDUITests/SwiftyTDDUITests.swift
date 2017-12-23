@@ -9,7 +9,7 @@
 import XCTest
 
 class SwiftyTDDUITests: XCTestCase {
-        
+        let app = XCUIApplication()
     override func setUp() {
         super.setUp()
         
@@ -28,9 +28,9 @@ class SwiftyTDDUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testDriveDesign() {
         //first test is title, in TDD we write the test first then change things to match till the test passes.
-        
+        XCTAssert(app.navigationBars.staticTexts["SwiftyTDD"].exists, "App Title does not match intended App Name")
     }
     
 }
