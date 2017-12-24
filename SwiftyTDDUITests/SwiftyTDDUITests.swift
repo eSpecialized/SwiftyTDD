@@ -67,6 +67,13 @@ class SwiftyTDDUITests: XCTestCase {
         let regularCheck = app.staticTexts["Regular Gas"]
         XCTAssert(regularCheck.waitForExistence(timeout: 5), "GasType label didn't change to Regular error")
         
+        //lets do an alert next! and dismiss it, on dismiss it will change the text mid screen to be something else.
+        app.buttons["ShowAlert"].tap()
+        app.alerts["Handy Alert"].buttons["Okay!"].tap()
+        let mainStatus = app.staticTexts["mainStatus"]
+        let theStatus = mainStatus.label
+        XCTAssert(theStatus == "Ok Boss", "Main Status Label mid screen didn't update to expected text")
+        
         
         
         //=== end of detail
