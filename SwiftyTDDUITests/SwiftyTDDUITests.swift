@@ -56,6 +56,11 @@ class SwiftyTDDUITests: XCTestCase {
         XCTAssert(labelStatus.waitForExistence(timeout: 5), "Label is missing intended value")
         
         
+        //ok there is a new label GasType accessibility label.
+        let labelGasType = app.staticTexts["GasType"]
+        let gasType = labelGasType.label
+        XCTAssert(gasType == "Premium Gas", "Only ever use Premium gas in this device")
+        
         //navigate back to the main screen
         app.navigationBars["Detail"].buttons["SwiftyTDD"].tap()
  
