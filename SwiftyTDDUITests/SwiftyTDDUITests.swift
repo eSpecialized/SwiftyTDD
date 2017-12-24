@@ -51,8 +51,9 @@ class SwiftyTDDUITests: XCTestCase {
         let theVal = OnOff.value as! String
         XCTAssert(theVal == "1", "OnOff is not on")
         
+        
         let labelStatus = app.staticTexts["Switch is on"]
-        XCTAssert(labelStatus.exists, "Label is missing intended value")
+        XCTAssert(labelStatus.waitForExistence(timeout: 5), "Label is missing intended value")
         
         
         //navigate back to the main screen

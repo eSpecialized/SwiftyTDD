@@ -12,7 +12,20 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
-
+    @IBOutlet weak var myStatus: UILabel!
+    
+    @IBAction func OnOffChanged(_ sender: Any) {
+        if let mySwitch = sender as? UISwitch
+        {
+            if mySwitch.isOn {
+                myStatus.text = "Switch is on"
+            } else {
+                myStatus.text = "Label"
+            }
+            
+        }
+    }
+    
     func configureView() {
         // Update the user interface for the detail item.
         if let detail = detailItem {
