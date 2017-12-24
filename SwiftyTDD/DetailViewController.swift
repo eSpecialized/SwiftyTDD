@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
@@ -73,7 +73,38 @@ class DetailViewController: UIViewController {
             configureView()
         }
     }
+    
+    func getRowData(_ row: Int) -> String
+    {
+        switch row {
+        case 0:
+            return "Portland"
+            
+        case 1:
+            return "Springfield"
+            
+        case 2:
+            return "Salem"
+        default:
+            return "No Where"
+        }
+        return ""
+    }
 
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return getRowData(row)
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 3
+    }
 
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print( getRowData(row) )
+    }
 }
 

@@ -35,7 +35,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0XM-y9-sOw">
-                                <rect key="frame" x="20" y="323.5" width="335" height="20.5"/>
+                                <rect key="frame" x="20" y="323" width="335" height="21"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration" identifier="mainStatus"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -76,12 +76,25 @@
                                     <action selector="showAlertClicked:" destination="JEX-9P-axG" eventType="touchUpInside" id="rQm-DX-Kxf"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mHZ-nQ-dUs">
+                                <rect key="frame" x="0.0" y="505" width="375" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="pbA-Eb-kJQ"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="JEX-9P-axG" id="ObJ-Np-3pA"/>
+                                    <outlet property="delegate" destination="JEX-9P-axG" id="F0g-I1-woD"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="mHZ-nQ-dUs" firstAttribute="bottom" secondItem="VUw-jc-0yf" secondAttribute="bottom" id="8gV-0v-hku"/>
                             <constraint firstItem="kzW-Qz-CUD" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="20" id="Cgd-Bh-KWd"/>
                             <constraint firstItem="aqu-6J-yBu" firstAttribute="top" secondItem="KqA-by-7ZB" secondAttribute="bottom" constant="18" id="OOj-ap-yaS"/>
                             <constraint firstItem="Nlf-AQ-z4n" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="POd-Ug-7b3"/>
+                            <constraint firstItem="mHZ-nQ-dUs" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" id="Rb3-qE-AKQ"/>
+                            <constraint firstItem="mHZ-nQ-dUs" firstAttribute="centerX" secondItem="0XM-y9-sOw" secondAttribute="centerX" id="Rpc-91-ClD"/>
                             <constraint firstItem="ADq-qN-Kz9" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="20" id="S9Y-MM-fKk"/>
                             <constraint firstItem="0XM-y9-sOw" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" constant="20" symbolic="YES" id="Tsc-yG-G1q"/>
                             <constraint firstItem="kzW-Qz-CUD" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" constant="23" id="TwE-oB-Zd8"/>

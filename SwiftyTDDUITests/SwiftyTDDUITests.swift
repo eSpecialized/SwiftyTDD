@@ -89,6 +89,9 @@ class SwiftyTDDUITests: XCTestCase {
         
         //try a picker item now
         app.pickerWheels.element.adjust(toPickerWheelValue: "Salem")
+        let pickerChngToSalem = app.pickerWheels.element.value as! String
+        XCTAssert(pickerChngToSalem == "Salem", "Pickers selected value is incorrect, it should be salem but is " + pickerChngToSalem)
+        
         
         //=== end of detail
         //navigate back to the main screen
