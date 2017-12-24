@@ -61,10 +61,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqu-6J-yBu">
+                                <rect key="frame" x="275" y="136" width="80" height="30"/>
+                                <state key="normal" title="ChangeGas"/>
+                                <connections>
+                                    <action selector="changeGasClicked:" destination="JEX-9P-axG" eventType="touchUpInside" id="HVO-4w-Njq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="kzW-Qz-CUD" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="20" id="Cgd-Bh-KWd"/>
+                            <constraint firstItem="aqu-6J-yBu" firstAttribute="top" secondItem="KqA-by-7ZB" secondAttribute="bottom" constant="18" id="OOj-ap-yaS"/>
                             <constraint firstItem="ADq-qN-Kz9" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="20" id="S9Y-MM-fKk"/>
                             <constraint firstItem="0XM-y9-sOw" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" constant="20" symbolic="YES" id="Tsc-yG-G1q"/>
                             <constraint firstItem="kzW-Qz-CUD" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" constant="23" id="TwE-oB-Zd8"/>
@@ -73,6 +81,7 @@
                             <constraint firstItem="KqA-by-7ZB" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" constant="23" id="maw-zy-sVJ"/>
                             <constraint firstItem="ADq-qN-Kz9" firstAttribute="top" secondItem="kzW-Qz-CUD" secondAttribute="bottom" constant="37" id="pcb-Ms-GGc"/>
                             <constraint firstAttribute="trailing" secondItem="0XM-y9-sOw" secondAttribute="trailing" constant="20" symbolic="YES" id="tHV-ZD-HQj"/>
+                            <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="aqu-6J-yBu" secondAttribute="trailing" constant="20" id="xoa-UM-Vh1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VUw-jc-0yf"/>
                     </view>
@@ -80,6 +89,7 @@
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
                     <connections>
                         <outlet property="detailDescriptionLabel" destination="0XM-y9-sOw" id="deQ-Na-JPF"/>
+                        <outlet property="gasLabel" destination="ADq-qN-Kz9" id="GXW-J3-Cx3"/>
                         <outlet property="myStatus" destination="kzW-Qz-CUD" id="5BJ-lE-aJC"/>
                     </connections>
                 </viewController>

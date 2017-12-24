@@ -14,6 +14,8 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var myStatus: UILabel!
     
+    @IBOutlet weak var gasLabel: UILabel!
+    
     @IBAction func OnOffChanged(_ sender: Any) {
         if let mySwitch = sender as? UISwitch
         {
@@ -24,6 +26,10 @@ class DetailViewController: UIViewController {
             }
             
         }
+    }
+    
+    @IBAction func changeGasClicked(_ sender: Any) {
+        gasLabel.text = "Regular Gas"
     }
     
     func configureView() {
