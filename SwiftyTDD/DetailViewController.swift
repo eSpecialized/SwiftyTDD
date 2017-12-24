@@ -16,6 +16,10 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var gasLabel: UILabel!
     
+    deinit {
+        print("DetailViewController released")
+    }
+    
     @IBAction func OnOffChanged(_ sender: Any) {
         if let mySwitch = sender as? UISwitch
         {
@@ -30,6 +34,17 @@ class DetailViewController: UIViewController {
     
     @IBAction func changeGasClicked(_ sender: Any) {
         gasLabel.text = "Regular Gas"
+    }
+    
+    @IBAction func showAlertClicked(_ sender: Any) {
+        let alertMe = UIAlertController(title: "Handy Alert", message: "Change status?", preferredStyle: .alert)
+        let meAction1 = UIAlertAction(title: "Okay!", style: .default) { [unowned self] (theAction) in
+            self.detailDescriptionLabel.text = "Ok Boss"
+        }
+        alertMe.addAction(meAction1)
+        
+        present(alertMe, animated: true, completion: nil)
+        
     }
     
     func configureView() {
