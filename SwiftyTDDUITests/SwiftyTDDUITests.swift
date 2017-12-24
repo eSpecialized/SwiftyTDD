@@ -48,8 +48,8 @@ class SwiftyTDDUITests: XCTestCase {
         OnOff.tap() //change a switch from off to on
         
         let labelStatus = app.staticTexts["Status"]
-        let theVal = OnOff.value as! Bool
-        XCTAssert(theVal == true, "OnOff is not on")
+        let theVal = OnOff.value as! String
+        XCTAssert(theVal == "1", "OnOff is not on")
         
         
         //navigate back to the main screen
