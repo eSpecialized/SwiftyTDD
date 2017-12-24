@@ -51,6 +51,9 @@ class SwiftyTDDUITests: XCTestCase {
         let theVal = OnOff.value as! String
         XCTAssert(theVal == "1", "OnOff is not on")
         
+        let lblVal = labelStatus.value as! String
+        XCTAssert(lblVal == "Switch is on", "Label is missing intended value")
+        
         
         //navigate back to the main screen
         app.navigationBars["Detail"].buttons["SwiftyTDD"].tap()
