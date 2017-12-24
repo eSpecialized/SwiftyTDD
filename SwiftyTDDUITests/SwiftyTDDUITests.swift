@@ -61,6 +61,15 @@ class SwiftyTDDUITests: XCTestCase {
         let gasType = labelGasType.label
         XCTAssert(gasType == "Premium Gas", "Only ever use Premium gas in this device")
         
+        //ok lets add a button to change the gastype to something else
+        let changeGas = app.buttons["ChangeGas"]
+        changeGas.tap()
+        let regularCheck = app.staticTexts["Regular Gas"]
+        XCTAssert(regularCheck.waitForExistence(timeout: 5), "GasType label didn't change to Regular error")
+        
+        
+        
+        //=== end of detail
         //navigate back to the main screen
         app.navigationBars["Detail"].buttons["SwiftyTDD"].tap()
  
