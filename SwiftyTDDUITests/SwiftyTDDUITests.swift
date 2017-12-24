@@ -39,9 +39,20 @@ class SwiftyTDDUITests: XCTestCase {
         let swiftytddNavigationBar = app.navigationBars["SwiftyTDD"]
         swiftytddNavigationBar.buttons["Add"].tap()
         
+        //this leads into the detail controller
         let tablesQuery = app.tables
         tablesQuery.cells.firstMatch.tap()
         
+        //adding tests for switches, labels, sliders and buttons here.
+        let OnOff = app.switches["OnOff"]
+        OnOff.tap() //change a switch from off to on
+        
+        let labelStatus = app.staticTexts["Status"]
+        let theVal = OnOff.value as! Bool
+        XCTAssert(theVal == true, "OnOff is not on")
+        
+        
+        //navigate back to the main screen
         app.navigationBars["Detail"].buttons["SwiftyTDD"].tap()
  
         //swiftytddNavigationBar.buttons["Edit"].tap()
