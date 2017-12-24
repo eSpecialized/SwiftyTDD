@@ -67,13 +67,24 @@ class SwiftyTDDUITests: XCTestCase {
         let regularCheck = app.staticTexts["Regular Gas"]
         XCTAssert(regularCheck.waitForExistence(timeout: 5), "GasType label didn't change to Regular error")
         
+        //lets try adding an interruption handler
+        addUIInterruptionMonitor(withDescription: "Handy Alert") { (alert) -> Bool in
+            alert.buttons["Okay!"].tap()
+            return true
+        }
+        
         //lets do an alert next! and dismiss it, on dismiss it will change the text mid screen to be something else.
         app.buttons["ShowAlert"].tap()
-        app.alerts["Handy Alert"].buttons["Okay!"].tap()
-        let mainStatus = app.staticTexts["mainStatus"]
-        let theStatus = mainStatus.label
-        XCTAssert(theStatus == "Ok Boss", "Main Status Label mid screen didn't update to expected text")
         
+        app.tap() //will cause the ui interruption monitor to fire.
+        
+        //app.alerts["Handy Alert"].buttons["Okay!"].tap() //swapped to the ui interruption handler
+        //let mainStatus = app.staticTexts["mainStatus"]
+        //let theStatus = mainStatus.label
+        //XCTAssert(theStatus == "Ok Boss", "Main Status Label mid screen didn't update to expected text")
+        
+        let theStatus = app.staticTexts["Ok Boss"]
+        XCTAssert(theStatus.waitForExistence(timeout: 5), "Main Status Label mid screen didn't update to expected text")
         
         
         //=== end of detail
