@@ -87,6 +87,9 @@ class SwiftyTDDUITests: XCTestCase {
         XCTAssert(theStatus.waitForExistence(timeout: 5), "Main Status Label mid screen didn't update to expected text")
         
         
+        //try a picker item now
+        app.pickerWheels.element.adjust(toPickerWheelValue: "Salem")
+        
         //=== end of detail
         //navigate back to the main screen
         app.navigationBars["Detail"].buttons["SwiftyTDD"].tap()
