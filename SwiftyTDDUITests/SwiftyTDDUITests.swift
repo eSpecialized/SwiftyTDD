@@ -99,8 +99,9 @@ class SwiftyTDDUITests: XCTestCase {
         
         //textfield manipulation
         let inputField1 = app.textFields["field1"]
+        inputField1.tap()
         inputField1.typeText("Fortitude")
-        let outValfld1 = app.staticTexts["Fortitude"].label //inputField1.value as! String
+        let outValfld1 = inputField1.value as! String
         XCTAssert(outValfld1 == "Fortitude", "Text Field Didn't update to expected result")
         
         //=== end of detail

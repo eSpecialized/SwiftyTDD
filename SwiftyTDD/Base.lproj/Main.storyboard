@@ -89,13 +89,22 @@
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Joj-KC-HaT">
                                 <rect key="frame" x="18" y="352" width="339" height="31"/>
                             </slider>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3xw-O3-YT8">
+                                <rect key="frame" x="20" y="285" width="335" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="field1"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="3xw-O3-YT8" secondAttribute="trailing" constant="20" id="0bt-1I-aH7"/>
                             <constraint firstItem="mHZ-nQ-dUs" firstAttribute="bottom" secondItem="VUw-jc-0yf" secondAttribute="bottom" id="8gV-0v-hku"/>
                             <constraint firstItem="kzW-Qz-CUD" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="20" id="Cgd-Bh-KWd"/>
                             <constraint firstItem="Joj-KC-HaT" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="20" id="Cld-PR-7By"/>
                             <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="Joj-KC-HaT" secondAttribute="trailing" constant="20" id="F33-yj-KSN"/>
+                            <constraint firstItem="0XM-y9-sOw" firstAttribute="top" secondItem="3xw-O3-YT8" secondAttribute="bottom" constant="8" id="HNP-sC-Ydg"/>
                             <constraint firstItem="aqu-6J-yBu" firstAttribute="top" secondItem="KqA-by-7ZB" secondAttribute="bottom" constant="18" id="OOj-ap-yaS"/>
                             <constraint firstItem="Nlf-AQ-z4n" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="POd-Ug-7b3"/>
                             <constraint firstItem="mHZ-nQ-dUs" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" id="Rb3-qE-AKQ"/>
@@ -105,6 +114,7 @@
                             <constraint firstItem="kzW-Qz-CUD" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" constant="23" id="TwE-oB-Zd8"/>
                             <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="KqA-by-7ZB" secondAttribute="trailing" constant="18" id="ZB8-7q-i06"/>
                             <constraint firstItem="Joj-KC-HaT" firstAttribute="top" secondItem="0XM-y9-sOw" secondAttribute="bottom" constant="8" id="cAo-K1-VUu"/>
+                            <constraint firstItem="3xw-O3-YT8" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="20" id="ete-PW-nkI"/>
                             <constraint firstItem="Nlf-AQ-z4n" firstAttribute="top" secondItem="ADq-qN-Kz9" secondAttribute="bottom" constant="10" id="iOj-Yz-683"/>
                             <constraint firstItem="0XM-y9-sOw" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="jWN-iV-94e"/>
                             <constraint firstItem="KqA-by-7ZB" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" constant="23" id="maw-zy-sVJ"/>
