@@ -94,8 +94,8 @@ class SwiftyTDDUITests: XCTestCase {
         
         //one new test more uislider;
         app.sliders.element.adjust(toNormalizedSliderPosition: 1.0)
-        let theSliderVal = app.sliders.element.value as! Float
-        XCTAssert(theSliderVal == 1.0, "Slider failed to adjust to proper value is " + String(theSliderVal))
+        let theSliderVal = app.sliders.element.value as! String
+        XCTAssert(theSliderVal == "100%", "Slider failed to adjust to proper value is " + String(theSliderVal))
         
         //=== end of detail
         //navigate back to the main screen

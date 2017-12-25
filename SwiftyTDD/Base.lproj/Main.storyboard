@@ -86,11 +86,16 @@
                                     <outlet property="delegate" destination="JEX-9P-axG" id="F0g-I1-woD"/>
                                 </connections>
                             </pickerView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Joj-KC-HaT">
+                                <rect key="frame" x="18" y="352" width="339" height="31"/>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="mHZ-nQ-dUs" firstAttribute="bottom" secondItem="VUw-jc-0yf" secondAttribute="bottom" id="8gV-0v-hku"/>
                             <constraint firstItem="kzW-Qz-CUD" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="20" id="Cgd-Bh-KWd"/>
+                            <constraint firstItem="Joj-KC-HaT" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="20" id="Cld-PR-7By"/>
+                            <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="Joj-KC-HaT" secondAttribute="trailing" constant="20" id="F33-yj-KSN"/>
                             <constraint firstItem="aqu-6J-yBu" firstAttribute="top" secondItem="KqA-by-7ZB" secondAttribute="bottom" constant="18" id="OOj-ap-yaS"/>
                             <constraint firstItem="Nlf-AQ-z4n" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="POd-Ug-7b3"/>
                             <constraint firstItem="mHZ-nQ-dUs" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" id="Rb3-qE-AKQ"/>
@@ -99,6 +104,7 @@
                             <constraint firstItem="0XM-y9-sOw" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" constant="20" symbolic="YES" id="Tsc-yG-G1q"/>
                             <constraint firstItem="kzW-Qz-CUD" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" constant="23" id="TwE-oB-Zd8"/>
                             <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="KqA-by-7ZB" secondAttribute="trailing" constant="18" id="ZB8-7q-i06"/>
+                            <constraint firstItem="Joj-KC-HaT" firstAttribute="top" secondItem="0XM-y9-sOw" secondAttribute="bottom" constant="8" id="cAo-K1-VUu"/>
                             <constraint firstItem="Nlf-AQ-z4n" firstAttribute="top" secondItem="ADq-qN-Kz9" secondAttribute="bottom" constant="10" id="iOj-Yz-683"/>
                             <constraint firstItem="0XM-y9-sOw" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="jWN-iV-94e"/>
                             <constraint firstItem="KqA-by-7ZB" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" constant="23" id="maw-zy-sVJ"/>
@@ -114,11 +120,12 @@
                         <outlet property="detailDescriptionLabel" destination="0XM-y9-sOw" id="deQ-Na-JPF"/>
                         <outlet property="gasLabel" destination="ADq-qN-Kz9" id="GXW-J3-Cx3"/>
                         <outlet property="myStatus" destination="kzW-Qz-CUD" id="5BJ-lE-aJC"/>
+                        <outlet property="theSlide" destination="Joj-KC-HaT" id="bKL-J3-gvb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709" y="129"/>
+            <point key="canvasLocation" x="708" y="128.18590704647679"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">

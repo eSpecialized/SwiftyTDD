@@ -16,6 +16,8 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     @IBOutlet weak var gasLabel: UILabel!
     
+    @IBOutlet weak var theSlide: UISlider!
+    
     deinit {
         print("DetailViewController released")
     }
