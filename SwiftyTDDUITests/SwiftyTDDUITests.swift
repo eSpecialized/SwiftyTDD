@@ -35,7 +35,6 @@ class SwiftyTDDUITests: XCTestCase {
         XCTAssert(navBar == "SwiftyTDD", "App Title does not match intended App Name")
         
        //the following was a record to get my bearings.
-        let app = XCUIApplication()
         let swiftytddNavigationBar = app.navigationBars["SwiftyTDD"]
         swiftytddNavigationBar.buttons["Add"].tap()
         
@@ -92,6 +91,11 @@ class SwiftyTDDUITests: XCTestCase {
         let pickerChngToSalem = app.pickerWheels.element.value as! String
         XCTAssert(pickerChngToSalem == "Salem", "Pickers selected value is incorrect, it should be salem but is " + pickerChngToSalem)
         
+        
+        //one new test more uislider;
+        app.sliders.element.adjust(toNormalizedSliderPosition: 1.0)
+        let theSliderVal = app.sliders.element.value as! Float
+        XCTAssert(theSliderVal == 1.0, "Slider failed to adjust to proper value is " + String(theSliderVal))
         
         //=== end of detail
         //navigate back to the main screen
