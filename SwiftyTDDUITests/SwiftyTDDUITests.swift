@@ -97,6 +97,12 @@ class SwiftyTDDUITests: XCTestCase {
         let theSliderVal = app.sliders.element.value as! String
         XCTAssert(theSliderVal == "100%", "Slider failed to adjust to proper value is " + String(theSliderVal))
         
+        //textfield manipulation
+        let inputField1 = app.textFields["field1"]
+        inputField1.typeText("Fortitude")
+        let outValfld1 = app.staticTexts["Fortitude"].label //inputField1.value as! String
+        XCTAssert(outValfld1 == "Fortitude", "Text Field Didn't update to expected result")
+        
         //=== end of detail
         //navigate back to the main screen
         app.navigationBars["Detail"].buttons["SwiftyTDD"].tap()
