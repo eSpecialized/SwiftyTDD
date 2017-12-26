@@ -42,6 +42,9 @@ class SwiftyTDDUITests: XCTestCase {
         let tablesQuery = app.tables
         tablesQuery.cells.firstMatch.tap()
         
+        //Now in the detail controller, lets find out.
+        XCTAssert(app.navigationBars["Detail"].exists, "Fail: Not in Detail navigator yet")
+        
         //adding tests for switches, labels, sliders and buttons here.
         let OnOff = app.switches["OnOff"]
         OnOff.tap() //change a switch from off to on
