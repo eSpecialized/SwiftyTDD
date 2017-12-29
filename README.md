@@ -21,5 +21,8 @@ Setup the XCUIElement for labels, cells, etc. Then waitForExistance, do not do t
 ## How long does it take to write tests?
 It appears some elements can take time to get right the first time, up to 30 minutes per test.
 
-    
-    
+
+## Weather testing added using Wunderground
+Get your API key here >> https://www.wunderground.com/weather/api/
+Once you have that key, you can launch the app in simulator or on your phone, and insert the api key in prefs.
+Now weather tests will work.
