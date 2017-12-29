@@ -25,19 +25,21 @@ class SwiftyTDDTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
-        var wunder = Wunderground()
+        let wunder = Wunderground()
         wunder.state = "OR"
         wunder.location = "Woodburn"
         
-        var temp = ""
+
         let expectationOut = expectation(description: "Temperature data is retrieved")
-        wunder.getTemp { (inTemp) in
+        let wResult = wunder.getTemp { (inTemp) in
             XCTAssertFalse(inTemp.isEmpty)
             if !inTemp.isEmpty {
                 expectationOut.fulfill()
                 print("Temp retrieved is : " + inTemp)
             }
         }
+        
+        XCTAssertTrue(wResult == true, "Failed to initiate weather request error.")
         
         waitForExpectations(timeout: 10) { (errors) in
             if let errors = errors {

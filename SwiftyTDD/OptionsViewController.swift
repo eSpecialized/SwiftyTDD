@@ -16,7 +16,6 @@ class OptionsViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,6 +56,6 @@ class OptionsViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.becomeFirstResponder()
+            textField.becomeFirstResponder()
     }
 }
