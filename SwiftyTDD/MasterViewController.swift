@@ -18,8 +18,11 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        navigationItem.leftBarButtonItem = editButtonItem
-
+        //navigationItem.leftBarButtonItem = editButtonItem
+        
+        let barLeftItem = UIBarButtonItem(title: "Prefs", style: .plain, target: self, action: #selector(showPrefs(_:)))
+        navigationItem.leftBarButtonItem = barLeftItem
+        
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
         navigationItem.rightBarButtonItem = addButton
         if let split = splitViewController {
@@ -27,6 +30,12 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
     }
+
+    @objc func showPrefs(_ sender: Any?)
+    {
+        performSegue(withIdentifier: "showPrefs", sender: self)
+    }
+    
 
     override func viewWillAppear(_ animated: Bool) {
         clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
