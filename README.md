@@ -26,3 +26,8 @@ It appears some elements can take time to get right the first time, up to 30 min
 Get your API key here >> https://www.wunderground.com/weather/api/
 Once you have that key, you can launch the app in simulator or on your phone, and insert the api key in prefs.
 Now weather tests will work.
+
+## Changes to Support Weather information.
+ I added in the current_observation swift class that assists in decoding the json with the new iOS 11 JSONDecoder.  It uses the new Codable
+   for structs enums, and classes to decode the JSON.
+   

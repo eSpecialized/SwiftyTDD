@@ -10,6 +10,7 @@
 		351C199F1FF2BD34002CFCB6 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351C199E1FF2BD34002CFCB6 /* OptionsViewController.swift */; };
 		351C19A11FF2CCA1002CFCB6 /* Prefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351C19A01FF2CCA1002CFCB6 /* Prefs.swift */; };
 		353B98061FF5C0A1004219E0 /* Wunderground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353B98051FF5C0A1004219E0 /* Wunderground.swift */; };
+		353B98091FF5F135004219E0 /* current_observation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353B98081FF5F135004219E0 /* current_observation.swift */; };
 		357E6AD71FEE1777000659E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357E6AD61FEE1777000659E9 /* AppDelegate.swift */; };
 		357E6ADA1FEE1777000659E9 /* SwiftyTDD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 357E6AD81FEE1777000659E9 /* SwiftyTDD.xcdatamodeld */; };
 		357E6ADC1FEE1778000659E9 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357E6ADB1FEE1778000659E9 /* MasterViewController.swift */; };
@@ -42,6 +43,7 @@
 		351C199E1FF2BD34002CFCB6 /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		351C19A01FF2CCA1002CFCB6 /* Prefs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prefs.swift; sourceTree = "<group>"; };
 		353B98051FF5C0A1004219E0 /* Wunderground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wunderground.swift; sourceTree = "<group>"; };
+		353B98081FF5F135004219E0 /* current_observation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = current_observation.swift; sourceTree = "<group>"; };
 		357E6AD31FEE1777000659E9 /* SwiftyTDD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyTDD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		357E6AD61FEE1777000659E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		357E6AD91FEE1777000659E9 /* SwiftyTDD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwiftyTDD.xcdatamodel; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				351C199E1FF2BD34002CFCB6 /* OptionsViewController.swift */,
 				351C19A01FF2CCA1002CFCB6 /* Prefs.swift */,
 				353B98051FF5C0A1004219E0 /* Wunderground.swift */,
+				353B98081FF5F135004219E0 /* current_observation.swift */,
 				357E6ADF1FEE1778000659E9 /* Main.storyboard */,
 				357E6AE21FEE1778000659E9 /* Assets.xcassets */,
 				357E6AE41FEE1778000659E9 /* LaunchScreen.storyboard */,
@@ -278,6 +281,7 @@
 			files = (
 				351C19A11FF2CCA1002CFCB6 /* Prefs.swift in Sources */,
 				357E6ADA1FEE1777000659E9 /* SwiftyTDD.xcdatamodeld in Sources */,
+				353B98091FF5F135004219E0 /* current_observation.swift in Sources */,
 				353B98061FF5C0A1004219E0 /* Wunderground.swift in Sources */,
 				357E6AD71FEE1777000659E9 /* AppDelegate.swift in Sources */,
 				357E6ADC1FEE1778000659E9 /* MasterViewController.swift in Sources */,

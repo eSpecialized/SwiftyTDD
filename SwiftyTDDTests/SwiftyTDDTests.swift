@@ -43,7 +43,7 @@ class SwiftyTDDTests: XCTestCase {
         
         waitForExpectations(timeout: 10) { (errors) in
             if let errors = errors {
-                XCTFail("Temperature failed to retrieve in call back")
+                XCTFail("Temperature failed to retrieve in call back \(errors)" )
             }
         }
     }

@@ -35,15 +35,11 @@ class Wunderground: NSObject {
             
             if let data = data {
                 do {
-                    let jsonAny = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! [String: Any]
-                    print(jsonAny)
-                    let current_observation = jsonAny["current_observation"] as! [String: Any]
+                    let jsondecode = JSONDecoder()
                     
-                    let tempF = current_observation["temp_f"] as! NSNumber
+                    let o = try jsondecode.decode(currently.self, from: data)
                     
-                    print(tempF.stringValue)
-                    completion(tempF.stringValue)
-                    
+                    completion(o.current_observation.feelslike_f)
                     
                 } catch let errorJson {
                     print(errorJson)
