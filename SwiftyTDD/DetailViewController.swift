@@ -53,7 +53,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         // Update the user interface for the detail item.
         if let detail = detailItem {
             if let label = detailDescriptionLabel {
-                label.text = detail.timestamp!.description
+                label.text = "\(detail.city!), \(detail.state!)"
             }
         }
     }

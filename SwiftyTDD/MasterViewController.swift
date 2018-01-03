@@ -23,7 +23,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         let barLeftItem = UIBarButtonItem(title: "Prefs", style: .plain, target: self, action: #selector(showPrefs(_:)))
         navigationItem.leftBarButtonItem = barLeftItem
         
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(promptForWeatherLocation(_:)))
         navigationItem.rightBarButtonItem = addButton
         if let split = splitViewController {
             let controllers = split.viewControllers
@@ -51,12 +51,17 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     }
 
     @objc
-    func insertNewObject(_ sender: Any) {
+    func insertNewObject(_ cityStateInfo: String) {
         let context = self.fetchedResultsController.managedObjectContext
         let newEvent = Event(context: context)
              
         // If appropriate, configure the new managed object.
+        //newEvent.timestamp = Date()
+        let objItems = cityStateInfo.split(separator: ",")
         newEvent.timestamp = Date()
+        newEvent.city = String(objItems.first!)
+        newEvent.state = String(objItems.last!).trimmingCharacters(in: CharacterSet.whitespaces)
+        newEvent.temperature = 0.0
 
         // Save the context.
         do {
@@ -67,6 +72,27 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             let nserror = error as NSError
             fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
         }
+    }
+    
+    @objc
+    func promptForWeatherLocation(_ sender: Any) {
+        let alertv = UIAlertController(title: "Add Location", message: "State is two letters", preferredStyle: .alert)
+        alertv.addTextField { (textfield) in
+            textfield.placeholder = "City, St"
+        }
+        let actionAdd = UIAlertAction(title: "Add", style: .default) { (alertact) in
+            if let textfld1 = alertv.textFields?.first, let cityState = textfld1.text {
+                if (!cityState.isEmpty) {
+                    DispatchQueue.main.async {
+                        self.insertNewObject(cityState)
+                    }
+                }
+            }
+        }
+        
+        alertv.addAction(actionAdd)
+        
+        self.present(alertv, animated: true, completion: nil)
     }
 
     // MARK: - Segues
@@ -95,7 +121,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell", for: indexPath) as! WeatherCell
         let event = fetchedResultsController.object(at: indexPath)
         configureCell(cell, withEvent: event)
         return cell
@@ -122,8 +148,12 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         }
     }
 
-    func configureCell(_ cell: UITableViewCell, withEvent event: Event) {
-        cell.textLabel!.text = event.timestamp!.description
+    func configureCell(_ cell: WeatherCell, withEvent event: Event) {
+        if let city = event.city, let state = event.state{
+            cell.city!.text = city
+            cell.state!.text = state
+            cell.temperature!.text = String(event.temperature)
+        }
     }
 
     // MARK: - Fetched results controller
@@ -184,9 +214,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             case .delete:
                 tableView.deleteRows(at: [indexPath!], with: .fade)
             case .update:
-                configureCell(tableView.cellForRow(at: indexPath!)!, withEvent: anObject as! Event)
+                configureCell(tableView.cellForRow(at: indexPath!)! as! WeatherCell, withEvent: anObject as! Event)
             case .move:
-                configureCell(tableView.cellForRow(at: indexPath!)!, withEvent: anObject as! Event)
+                configureCell(tableView.cellForRow(at: indexPath!)! as! WeatherCell, withEvent: anObject as! Event)
                 tableView.moveRow(at: indexPath!, to: newIndexPath!)
         }
     }
