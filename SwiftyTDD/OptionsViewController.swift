@@ -12,7 +12,7 @@ class OptionsViewController: UIViewController, UITextFieldDelegate {
 
     let myPrefs = Prefs();
     
-    @IBOutlet weak var noaaTokenField: UITextField!
+    @IBOutlet weak var tokenField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,7 @@ class OptionsViewController: UIViewController, UITextFieldDelegate {
     }
     
     func savePrefs() {
-        if let tokenOut = noaaTokenField.text {
+        if let tokenOut = tokenField.text {
             myPrefs.tokenField = tokenOut
         }
         myPrefs.savePrefs()
@@ -37,7 +37,7 @@ class OptionsViewController: UIViewController, UITextFieldDelegate {
     
     func loadPrefs() {
         myPrefs.loadPrefs()
-        noaaTokenField.text = myPrefs.tokenField
+        tokenField.text = myPrefs.tokenField
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,5 +57,16 @@ class OptionsViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
             textField.becomeFirstResponder()
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if let token = tokenField.text {
+            if token.count == 16 {
+                tokenField.textColor = UIColor.green
+            } else {
+                tokenField.textColor = UIColor.red
+            }
+        }
+        return true
     }
 }

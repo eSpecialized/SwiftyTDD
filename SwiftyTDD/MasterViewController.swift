@@ -153,6 +153,23 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             cell.city!.text = city
             cell.state!.text = state
             cell.temperature!.text = String(event.temperature)
+            
+            let wunder = Wunderground()
+            wunder.state = state
+            wunder.location = city
+            
+            do {
+                _ = try wunder.getTemp { (inTemp) in
+                    if !inTemp.isEmpty {
+                        DispatchQueue.main.async {
+                            cell.temperature!.text = inTemp + "F"
+                        }
+                    }
+                }
+            } catch let Error {
+                print(Error)
+            }
+            
         }
     }
 

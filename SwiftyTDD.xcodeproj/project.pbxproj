@@ -89,6 +89,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		353D24021FFF393E0054925D /* JSONApi */ = {
+			isa = PBXGroup;
+			children = (
+				353B98051FF5C0A1004219E0 /* Wunderground.swift */,
+				353B98081FF5F135004219E0 /* current_observation.swift */,
+			);
+			path = JSONApi;
+			sourceTree = "<group>";
+		};
 		357E6ACA1FEE1777000659E9 = {
 			isa = PBXGroup;
 			children = (
@@ -119,8 +128,7 @@
 				351C199E1FF2BD34002CFCB6 /* OptionsViewController.swift */,
 				3505C9731FFD70B9004E47EC /* WeatherCell.swift */,
 				351C19A01FF2CCA1002CFCB6 /* Prefs.swift */,
-				353B98051FF5C0A1004219E0 /* Wunderground.swift */,
-				353B98081FF5F135004219E0 /* current_observation.swift */,
+				353D24021FFF393E0054925D /* JSONApi */,
 				357E6ADF1FEE1778000659E9 /* Main.storyboard */,
 				357E6AE21FEE1778000659E9 /* Assets.xcassets */,
 				357E6AE41FEE1778000659E9 /* LaunchScreen.storyboard */,

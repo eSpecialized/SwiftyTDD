@@ -5,10 +5,21 @@ iOS Version : 11.2
 Xcode Version : 9.2
 Swift Version : 4.0
 
+Technolgoies utilized;
+    Swift 4.0
+    Xcode 9
+    UIKit
+    CoreData
+    Foundation
+    iOS 11
+    XCTest
+    Storyboards
+    
 tasks covered in this sample project;
 - Accessing Labels by its current string staticTexts[""]
 - Accessing elements by their accessibility identifier
 - Getting the value of the current label/item depends on the element kind.
+
 
 
 ## Accessibility identifier: Use it for grabbing access to the label.
@@ -28,6 +39,6 @@ Once you have that key, you can launch the app in simulator or on your phone, an
 Now weather tests will work.
 
 ## Changes to Support Weather information.
- I added in the current_observation swift class that assists in decoding the json with the new iOS 11 JSONDecoder.  It uses the new Codable
+ I added in the current_observation swift class that assists in decoding the json with the new iOS 11 JSONDecoder.  It uses the new Codable class
    for structs enums, and classes to decode the JSON.
    

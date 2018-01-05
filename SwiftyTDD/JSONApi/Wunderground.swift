@@ -10,15 +10,44 @@ import UIKit
 
 class Wunderground: NSObject {
 
-    var location = ""
+    enum WundergroundError: Error {
+        case missingToken
+        case invalidToken
+    }
+    
+    fileprivate var _location : String
+    var location : String {
+        set {
+            if let tempVal = newValue.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlPathAllowed)
+            {
+                _location = tempVal
+            }
+        }
+        get {
+            return _location
+        }
+    }
     var state = ""
     var apikey = ""
     
-    func getTemp(completion: @escaping (_ temp: String) -> Void) -> Bool {
+    override init() {
+        _location = ""
+        super.init()
+    }
+    
+    func getTemp(completion: @escaping (_ temp: String) -> Void) throws -> Bool  {
         
         if apikey.isEmpty {
             let ud = UserDefaults.standard
-            guard let token = ud.string(forKey: "token") else { return false }
+            guard let token = ud.string(forKey: "token") else
+            {
+                throw WundergroundError.missingToken
+            }
+            
+            if token.count != 16
+            {
+                throw WundergroundError.invalidToken
+            }
             self.apikey = token
         }
         

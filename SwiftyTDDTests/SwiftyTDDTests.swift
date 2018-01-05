@@ -29,15 +29,20 @@ class SwiftyTDDTests: XCTestCase {
         wunder.state = "OR"
         wunder.location = "Woodburn"
         
-
+        var wResult: Bool = false
         let expectationOut = expectation(description: "Temperature data is retrieved")
-        let wResult = wunder.getTemp { (inTemp) in
-            XCTAssertFalse(inTemp.isEmpty)
-            if !inTemp.isEmpty {
-                expectationOut.fulfill()
-                print("Temp retrieved is : " + inTemp)
+        do {
+              wResult = try wunder.getTemp { (inTemp) in
+                XCTAssertFalse(inTemp.isEmpty)
+                if !inTemp.isEmpty {
+                    expectationOut.fulfill()
+                    print("Temp retrieved is : " + inTemp)
+                }
             }
+        } catch let Error {
+            print(Error)
         }
+        
         
         XCTAssertTrue(wResult == true, "Failed to initiate weather request error.")
         
