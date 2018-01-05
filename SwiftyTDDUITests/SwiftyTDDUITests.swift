@@ -34,9 +34,25 @@ class SwiftyTDDUITests: XCTestCase {
         let navBar = self.app.navigationBars.element.identifier
         XCTAssert(navBar == "SwiftyTDD", "App Title does not match intended App Name")
         
+        let cellCountOrig = app.tables.firstMatch.cells.count
+        
        //the following was a record to get my bearings.
         let swiftytddNavigationBar = app.navigationBars["SwiftyTDD"]
         swiftytddNavigationBar.buttons["Add"].tap()
+        
+        //lets try adding an interruption handler
+        addUIInterruptionMonitor(withDescription: "Add Location") { (alert) -> Bool in
+            alert.textFields.firstMatch.typeText("New York, NY")
+            alert.buttons["Add"].tap()
+            return true
+        }
+        
+        app.tap()
+        //sleep(1)
+        
+        let cellCountAdded = app.tables.firstMatch.cells.count
+        
+        XCTAssert(cellCountAdded > cellCountOrig, "New Cell Failed to add to the table view.")
         
         //this leads into the detail controller
         let tablesQuery = app.tables
@@ -115,6 +131,10 @@ class SwiftyTDDUITests: XCTestCase {
         tablesQuery.cells.firstMatch.swipeLeft()
         tablesQuery.buttons["Delete"].tap()
         //swiftytddNavigationBar.buttons["Done"].tap()
+        
+        //new test to ensure the tableview cell was removed
+        let cellCountAfterDel = app.tables.firstMatch.cells.count
+        XCTAssert(cellCountAfterDel == cellCountOrig , "Fsiled to remove newly added table cell")
         
     }
     

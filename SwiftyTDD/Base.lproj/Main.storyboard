@@ -216,6 +216,7 @@
                                     <outlet property="city" destination="p4D-qy-fpf" id="wwU-gg-wlK"/>
                                     <outlet property="state" destination="57I-hJ-mb3" id="nd6-6k-fxH"/>
                                     <outlet property="temperature" destination="Nq4-Md-fwW" id="Iq8-0u-pjl"/>
+                                    <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="d5C-Vy-gi3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -276,7 +277,7 @@
                         <viewLayoutGuide key="safeArea" id="9yt-L8-kmX"/>
                     </view>
                     <connections>
-                        <outlet property="noaaTokenField" destination="hf4-Xw-WkR" id="ryq-nn-Y9V"/>
+                        <outlet property="tokenField" destination="hf4-Xw-WkR" id="LoC-TH-Zw8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJX-oF-5Ng" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -300,4 +301,7 @@
             <point key="canvasLocation" x="-45" y="129"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="d5C-Vy-gi3"/>
+    </inferredMetricsTieBreakers>
 </document>
