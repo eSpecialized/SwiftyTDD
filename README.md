@@ -20,8 +20,6 @@ tasks covered in this sample project;
 - Accessing elements by their accessibility identifier
 - Getting the value of the current label/item depends on the element kind.
 
-
-
 ## Accessibility identifier: Use it for grabbing access to the label.
       - Otherwise you must access it by the current staticText on the label,
       - Don't: set the Accessibility Hint, or Accessibility Label as that can mess up a test result on the labels new value.
@@ -33,7 +31,7 @@ Setup the XCUIElement for labels, cells, etc. Then waitForExistance, do not do t
 It appears some elements can take time to get right the first time, up to 30 minutes per test.
 
 
-## Weather testing added using Wunderground
+## Requirements for Weather testing added using Wunderground
 Get your API key here >> https://www.wunderground.com/weather/api/
 Once you have that key, you can launch the app in simulator or on your phone, and insert the api key in prefs.
 Now weather tests will work.

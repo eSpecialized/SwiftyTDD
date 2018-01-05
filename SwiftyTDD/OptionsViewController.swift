@@ -60,13 +60,20 @@ class OptionsViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if let token = tokenField.text {
-            if token.count == 16 {
-                tokenField.textColor = UIColor.green
-            } else {
-                tokenField.textColor = UIColor.red
-            }
+        
+        var textNewValue = textField.text ?? ""
+        if string.count > 0 {
+            let textOrig = textNewValue
+            let theRange = Range(range, in: textOrig)!
+            textNewValue = textOrig.replacingCharacters(in: theRange, with: string)
         }
-        return true
+        
+        if textNewValue.count - range.length == 16 {
+            textField.textColor = UIColor.green
+        } else {
+            textField.textColor = UIColor.red
+        }
+        
+        return textNewValue.count <= Int.max
     }
 }
